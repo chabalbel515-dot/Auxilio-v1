@@ -1,0 +1,16 @@
+{
+  "name": "Zs.xisFF VIP",
+  "short_name": "Zs.xisFF",
+  "description": "Painel de Sensibilidade Profissional",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ff00ff",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/771/771241.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
