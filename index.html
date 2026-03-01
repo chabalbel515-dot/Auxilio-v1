@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="manifest" href="manifest.json">
     <style>
-        /* Reset para ocupar a tela toda sem erro */
+        /* Ajuste para garantir que o fundo ocupe 100% da tela */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body { 
@@ -15,54 +15,74 @@
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            min-height: 100vh; 
+            min-height: 100vh; /* Força o alinhamento no meio da tela */
+            width: 100vw;
             margin: 0; 
             overflow: hidden; 
         }
 
-        /* Card principal ajustado para o estilo da imagem 2 */
         .card { 
             background: rgba(10, 10, 10, 0.95); 
-            border: 1px solid #222; 
+            border: 1px solid #1a1a1a; 
             border-radius: 25px; 
             padding: 25px; 
             width: 90%; 
-            max-width: 350px; 
+            max-width: 360px; /* Tamanho ideal para mobile */
             text-align: center; 
             box-shadow: 0 0 30px rgba(255, 123, 0, 0.1); 
         }
 
-        .profile-img { width: 90px; height: 90px; border-radius: 50%; border: 2px solid #ff7b00; margin-bottom: 10px; }
-        
-        input[type="password"] { 
-            width: 100%; padding: 12px; background: #111; border: 1px solid #333; 
-            border-radius: 10px; color: #fff; margin: 15px 0; box-sizing: border-box; 
+        .profile-img { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 50%; 
+            border: 2px solid #ff7b00; 
+            margin: 0 auto 15px auto; 
+            display: block; 
+        }
+
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            background: #111; 
+            border: 1px solid #333; 
+            border-radius: 10px; 
+            color: #fff; 
+            margin: 15px 0; 
         }
 
         .btn { 
-            width: 100%; padding: 15px; background: #ff7b00; border: none; 
-            border-radius: 12px; color: #fff; font-weight: bold; cursor: pointer; 
-            text-transform: uppercase; margin-top: 10px;
+            width: 100%; 
+            padding: 15px; 
+            background: #ff7b00; 
+            border: none; 
+            border-radius: 12px; 
+            color: #fff; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            margin-top: 10px;
         }
 
-        /* Ajuste das opções para ficarem uma embaixo da outra (Coluna) */
+        /* O segredo para ficar que nem a imagem 2: display flex nas opções */
         .option { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             background: #080808; 
-            padding: 12px; 
+            padding: 12px 15px; 
             border-radius: 15px; 
-            margin-bottom: 12px; 
+            margin-bottom: 12px; /* Espaço entre cada item */
             text-align: left; 
             border: 1px solid #1a1a1a; 
         }
 
+        .option div { flex: 1; }
         .option strong { font-size: 14px; display: block; color: #fff; }
         .option span { font-size: 11px; color: #666; }
 
-        /* Switch corrigido com a bolinha */
-        .switch { position: relative; width: 40px; height: 22px; flex-shrink: 0; }
+        /* Estilo do Switch (Bolinha) */
+        .switch { position: relative; width: 42px; height: 22px; flex-shrink: 0; margin-left: 10px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { 
             position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
@@ -73,11 +93,11 @@
             left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: .3s;
         }
         input:checked + .slider { background: #ff7b00; }
-        input:checked + .slider:before { transform: translateX(18px); }
+        input:checked + .slider:before { transform: translateX(20px); }
 
-        .hidden { display: none; }
-        h2 { font-size: 18px; margin-bottom: 20px; letter-spacing: 1px; }
-        .footer-name { color: #444; font-size: 12px; margin-top: 15px; }
+        .hidden { display: none !important; }
+        h2 { font-size: 18px; margin-bottom: 20px; color: #fff; letter-spacing: 1px; }
+        .footer-text { color: #444; font-size: 12px; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -103,7 +123,7 @@
         </div>
 
         <div class="option">
-            <div><strong>melhorar 2x</strong><span>Melhora sua mira 2x em ate 10%.</span></div>
+            <div><strong>melhorar 2x</strong><span>Melhora sua mira 2x em até 10%.</span></div>
             <label class="switch"><input type="checkbox"><span class="slider"></span></label>
         </div>
 
@@ -113,11 +133,12 @@
         </div>
 
         <button class="btn" onclick="openFreeFire()">ABRIR FREE FIRE</button>
-        <div class="footer-name">sielz</div>
+        <p class="footer-text">sielz</p>
     </div>
 
     <script src="engine.js"></script>
     <script>
+        // Use sua lógica do engine.js, aqui é apenas o gatilho visual
         if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
     </script>
 </body>
