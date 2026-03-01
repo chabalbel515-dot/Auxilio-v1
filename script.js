@@ -60,8 +60,8 @@ function injetarEngine() {
 
         // Lógica Anti-Jitter (Estabilização Samsung)
         if (document.getElementById('jitter').checked) {
-            if (Math.abs(dX) < 1) dX *= EngineSettings.antiJitterForca;
-            if (Math.abs(dY) < 1) dY *= EngineSettings.antiJitterForca;
+            if (Math.abs(dX) < 2) dX *= EngineSettings.antiJitterForca;
+            if (Math.abs(dY) < 2) dY *= EngineSettings.antiJitterForca;
         }
 
         // Lógica Aimbot (Bézier + Trava)
