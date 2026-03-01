@@ -1,0 +1,17 @@
+{
+  "name": "Painel Sielzada V3",
+  "short_name": "Sielz V3",
+  "description": "Otimizador de Sensibilidade e Resposta Tátil",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff7b00",
+  "icons": [
+    {
+      "src": "1000053165.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
