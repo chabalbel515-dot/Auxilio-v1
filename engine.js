@@ -53,6 +53,6 @@ function checkKey() {
 
 function openFreeFire() {
     // Comando para abrir o Free Fire diretamente
-    <a href="freefire://" class="ABRI FREE FIRE">Abrir Free Fire</a>
+    <a href="freefiremax://" class="ABRI FREE FIRE">Abrir Free Fire</a>
 
 }
