@@ -53,5 +53,5 @@ function checkKey() {
 
 function openFreeFire() {
     // Comando para abrir o Free Fire diretamente
-    window.location.href = "intent://#Intent;package=com.dts.freefireth;scheme=android-app;end";
+    window.location.href = "intent://#Intent;package=com.dts.freefireMax;scheme=android-app;end";
 }
